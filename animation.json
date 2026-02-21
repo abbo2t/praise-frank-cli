@@ -1,0 +1,415 @@
+{
+  "version": "1",
+  "width": 56,
+  "height": 13,
+  "loop_start": 8,
+  "frames": [
+    {
+      "duration": 80,
+      "lines": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 80,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 80,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 80,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 80,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 150,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |_|   |_| \\_\\/_/   \\_\\_| \\_|_|\\_\\",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "duration": 200,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |_|   |_| \\_\\/_/   \\_\\_| \\_|_|\\_\\",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "        *** YOU ARE AWESOME! ***",
+            "fg": "yellow"
+          }
+        ],
+        ""
+      ]
+    },
+    {
+      "duration": 300,
+      "lines": [
+        "",
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |_|   |_| \\_\\/_/   \\_\\_| \\_|_|\\_\\",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "        *** YOU ARE AWESOME! ***",
+            "fg": "bright_green",
+            "bold": true
+          }
+        ],
+        ""
+      ]
+    },
+    {
+      "duration": 600,
+      "lines": [
+        "",
+        [
+          {
+            "text": "  *  .  *  .  *  .  *  .  *  .  *  .  *  .  *",
+            "fg": "bright_cyan"
+          }
+        ],
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |_|   |_| \\_\\/_/   \\_\\_| \\_|_|\\_\\",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "        *** YOU ARE AWESOME! ***",
+            "fg": "bright_green",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "  *  .  *  .  *  .  *  .  *  .  *  .  *  .  *",
+            "fg": "bright_cyan"
+          }
+        ]
+      ]
+    },
+    {
+      "duration": 600,
+      "lines": [
+        "",
+        [
+          {
+            "text": "  .  *  .  *  .  *  .  *  .  *  .  *  .  *  .",
+            "fg": "bright_magenta"
+          }
+        ],
+        "",
+        [
+          {
+            "text": "         _____  ____      _    _   _ _  __",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  ___|  _ \\    / \\  | \\ | | |/ /",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        | |_  | |_) |  / _ \\ |  \\| | ' / ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |  _| |  _ <  / ___ \\| |\\  | . \\ ",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        [
+          {
+            "text": "        |_|   |_| \\_\\/_/   \\_\\_| \\_|_|\\_\\",
+            "fg": "bright_yellow",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "        *** YOU ARE AWESOME! ***",
+            "fg": "bright_green",
+            "bold": true
+          }
+        ],
+        "",
+        [
+          {
+            "text": "  .  *  .  *  .  *  .  *  .  *  .  *  .  *  .",
+            "fg": "bright_magenta"
+          }
+        ]
+      ]
+    }
+  ]
+}

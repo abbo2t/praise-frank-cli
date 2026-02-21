@@ -1,0 +1,103 @@
+#!/usr/bin/env python3
+"""praise-frank: ASCII animation praising Frank!
+
+Usage:
+    ./praise-frank          # loop forever (press Ctrl+C to exit)
+    ./praise-frank --once   # play once and exit
+"""
+
+import json
+import os
+import sys
+import time
+
+# ANSI color codes for web-safe terminal colors
+_COLORS = {
+    "black":          "\033[30m",
+    "red":            "\033[31m",
+    "green":          "\033[32m",
+    "yellow":         "\033[33m",
+    "blue":           "\033[34m",
+    "magenta":        "\033[35m",
+    "cyan":           "\033[36m",
+    "white":          "\033[37m",
+    "bright_black":   "\033[90m",
+    "bright_red":     "\033[91m",
+    "bright_green":   "\033[92m",
+    "bright_yellow":  "\033[93m",
+    "bright_blue":    "\033[94m",
+    "bright_magenta": "\033[95m",
+    "bright_cyan":    "\033[96m",
+    "bright_white":   "\033[97m",
+}
+_RESET = "\033[0m"
+_BOLD  = "\033[1m"
+
+
+def _render_line(line):
+    """Render a single line: plain string or list of colored spans."""
+    if isinstance(line, str):
+        return line
+    parts = []
+    for span in line:
+        text = span.get("text", "")
+        prefix = ""
+        fg = span.get("fg")
+        if fg and fg in _COLORS:
+            prefix += _COLORS[fg]
+        if span.get("bold"):
+            prefix += _BOLD
+        parts.append(f"{prefix}{text}{_RESET}" if prefix else text)
+    return "".join(parts)
+
+
+def _render_frame(frame):
+    """Render all lines in a frame as a single string."""
+    return "\n".join(_render_line(line) for line in frame.get("lines", []))
+
+
+def _play(animation, loop=True):
+    """Play the animation, looping from loop_start index when loop is True."""
+    frames = animation.get("frames", [])
+    if not frames:
+        return
+    loop_start = max(0, animation.get("loop_start", 0))
+    out = sys.stdout
+    out.write("\033[?25l")  # hide cursor
+    out.flush()
+    try:
+        first_pass = True
+        while True:
+            start = 0 if first_pass else loop_start
+            first_pass = False
+            for frame in frames[start:]:
+                out.write("\033[2J\033[H")  # clear screen, move to top-left
+                out.write(_render_frame(frame))
+                out.flush()
+                time.sleep(frame.get("duration", 100) / 1000.0)
+            if not loop:
+                break
+    except KeyboardInterrupt:
+        pass
+    finally:
+        out.write("\033[?25h")  # restore cursor
+        out.write("\033[2J\033[H")  # clear screen on exit
+        out.flush()
+
+
+def main():
+    loop = "--once" not in sys.argv
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    json_path = os.path.join(script_dir, "animation.json")
+    try:
+        with open(json_path) as f:
+            animation = json.load(f)
+    except FileNotFoundError:
+        sys.exit(f"Error: animation file not found: {json_path}")
+    except json.JSONDecodeError as exc:
+        sys.exit(f"Error: could not parse animation.json: {exc}")
+    _play(animation, loop=loop)
+
+
+if __name__ == "__main__":
+    main()
