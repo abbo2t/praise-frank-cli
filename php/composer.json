@@ -1,0 +1,12 @@
+{
+  "name": "abbo2t/praise-frank-cli-php",
+  "description": "PHP rewrite scaffold for praise-frank-cli",
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "PraiseFrank\\": "src/"
+    }
+  }
+}
