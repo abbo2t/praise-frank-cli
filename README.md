@@ -3,70 +3,44 @@ ASCII animation of Frank
 
 ## Terminal playback
 
-Play the JSON animation in a terminal using the included CLI:
+Play the JSON animation in a terminal using the included CLI. This repository now provides a PHP CLI port in the `php/` directory that replaces the original Python script.
 
 - Run once (default file `fareway-frank-keir.json`):
 
 ```bash
-python run_animation.py
+php php/index.php --file fareway-frank-keir.json --no-loop
 ```
 
 - Play a specific file and don't loop:
 
 ```bash
-python run_animation.py --file fareway-frank-keir.json --no-loop
+php php/index.php --file fareway-frank-keir.json --no-loop
 ```
 
-- Make the script executable and run directly:
+- The CLI reads frames from the JSON `frames` array and uses each frame's `duration` (milliseconds) to schedule playback.
+
+## Packaging and distribution
+
+This project previously used PyInstaller to build a native binary for the Python CLI. The Python packaging artifacts and build scripts were removed in favor of the PHP rewrite. Recommended distribution options now:
+
+- Use the PHP CLI directly (requires PHP 8+):
 
 ```bash
-chmod +x run_animation.py
-./run_animation.py
+php php/index.php --file fareway-frank-keir.json
 ```
 
-The CLI reads frames from the JSON `frames` array and uses each frame's `duration` (milliseconds) to schedule playback.
+- Containerize with Docker for reproducible runtime across hosts:
 
-## Building a standalone binary (PyInstaller)
-
-You can package `run_animation.py` into a single native executable so Python is not required on the target host.
-
-
-
-```bash
-./build_pyinstaller.sh
+```dockerfile
+FROM php:8-cli
+WORKDIR /app
+COPY . .
+CMD ["php", "php/index.php", "--file", "fareway-frank-keir.json"]
 ```
 
-This will call PyInstaller and place a single-file binary under `dist/` (e.g. `dist/run_animation`). The JSON asset `fareway-frank-keir.json` is bundled as data and will be placed next to the binary by PyInstaller.
+- If you still need a single native binary for distribution, consider tools that target PHP packaging (e.g., creating a small PHAR or building a lightweight Docker image). PHARs are limited for native terminal control and native packaging is generally more common for compiled languages.
 
+## Notes
 
-```bash
-python3 -m pip install --user pyinstaller
-pyinstaller --onefile --add-data "fareway-frank-keir.json:." run_animation.py
-```
-
-
-```bash
-./dist/run_animation --file fareway-frank-keir.json
-```
-
-Notes:
-
-## Makefile
-
-A `Makefile` is included with a convenience target.
-
-- Build (invokes the included build script):
-
-```bash
-make build
-```
-
-- Clean PyInstaller artifacts:
-
-```bash
-make clean
-```
-
-## CI: GitHub Actions
-
-There's a GitHub Actions workflow at `.github/workflows/pyinstaller-build.yml` that builds the Linux binary on pushes and pull requests to `main` and uploads the `dist/` directory as an artifact. Use the artifact from the workflow run to download the built executable.
+- The Python `run_animation.py` and the PyInstaller build script were intentionally removed from this branch; see the `php/` directory for the active implementation.
+- If you want the Python implementation preserved, I can add it to a separate branch or a `python/` directory instead of keeping it in `main`.
