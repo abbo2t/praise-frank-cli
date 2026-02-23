@@ -1,17 +1,38 @@
-# PHP rewrite scaffold
+# PHP rewrite
 
-This directory contains a minimal scaffold for rewriting `run_animation.py` in PHP.
+Fully functional PHP port of `run_animation.py`. It reads the same animation JSON and
+renders it in the terminal with optional color support.
 
-Quick start
+## Requirements
 
-- Run the scaffold:
+- PHP 8.0+ with the `pcntl` extension (optional, used for graceful SIGTERM handling).
+- Composer (optional). A simple PSR-4 autoloader is bundled, so Composer is only needed if
+	you later add dependencies and want `vendor/autoload.php`.
+
+## Quick start
+
+Run directly from the repo root:
 
 ```bash
-php php/index.php
+php php/index.php --file fareway-frank-keir.json --no-loop --no-color
 ```
 
-Translation notes
+Available flags mirror the Python CLI:
 
-- Review `run_animation.py` and port logic into `php/src/`.
-- If the Python version uses third-party libs, identify PHP equivalents or implement replacements.
-- Add `composer.json` and use PSR-4 autoloading for larger modules.
+- `-f, --file`: path to the animation JSON (default `fareway-frank-keir.json`).
+- `--no-loop`: play once and exit.
+- `--fps <value>`: override FPS for frames that lack `duration`.
+- `--no-color`: disable color sequences.
+- `--force-truecolor` / `--force-256`: force a color mode.
+- `--prefer-flicker`: clear the screen each frame if you prefer less stutter over flicker.
+
+## Composer (optional)
+
+If you prefer Composer’s autoloader:
+
+```bash
+cd php
+composer install
+```
+
+The CLI still works without this step thanks to the inline fallback autoloader.
